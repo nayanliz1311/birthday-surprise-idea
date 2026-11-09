@@ -1699,7 +1699,7 @@ z-index: 5;
     cursor: pointer;
     letter-spacing: 2px;
 }
-
+        
 .quiz-error {
     color: #b94c70;
     font-family: 'Poppins', sans-serif;
@@ -1959,4 +1959,30 @@ z-index: 5;
     .letter-content {
         font-size: 20px;
     }
+}
+/* MOBILE BIRTHDAY PAGE FIX */
+
+@media (max-width: 650px) {
+
+    .birthday-page {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+
+        justify-content: flex-start !important;
+
+        padding: 35px 15px !important;
+    }
+
+    .birthday-door {
+        margin: 15px 0;
+        font-size: 110px;
+    }
+
+    .next-button {
+        display: block !important;
+        position: relative;
+        margin: 25px auto 20px;
+        flex-shrink: 0;
+    }
+
 }
