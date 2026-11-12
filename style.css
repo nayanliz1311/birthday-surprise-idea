@@ -1,0 +1,254 @@
+/* GOOGLE FONT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050509;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* COMMON SCREEN */
+.screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* SCREEN 1 */
+.welcome-screen {
+    background:
+        radial-gradient(circle at center, #211020 0%, #08060d 55%, #020204 100%);
+}
+
+.welcome-content {
+    text-align: center;
+    z-index: 2;
+    animation: fadeIn 1.5s ease;
+}
+
+.top-text {
+    font-family:"pzlyfair Display",serif;
+    color: #ffe0ed;
+    font-size: clamp(20px,3vw,30px);
+    letter-spacing: 5px;
+    transform: translateY(-25px);
+    margin-bottom: 95px;
+    text-shadow: 0 0 15px #ff75ae;
+ animation:fadeIn 1.8s ease;
+font-weight:600;
+}
+
+.bottom-text {
+    color: #b8a0b0;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 75px;
+}
+
+/* HEART BUTTON */
+.heart-button {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border: none;
+    background: #ed397b;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    box-shadow: 0 0 35px #ed397b,
+                0 0 80px #ed397b55;
+    animation: heartbeat 1.5s infinite;
+}
+
+.heart-button::before,
+.heart-button::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: #ed397b;
+    border-radius: 50%;
+}
+
+.heart-button::before {
+    top: -90px;
+    left: 0;
+}
+
+.heart-button::after {
+    top: 0;
+    left: 90px;
+}
+
+.heart-button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    width: max-content;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    transform: translate(-50%, -50%) rotate(45deg);
+    text-shadow: 0 0 12px white;
+    pointer-events: none;
+}
+
+/* SCREEN 2 */
+.reveal-screen {
+    background: radial-gradient(circle, #17101e, #030306 75%);
+}
+
+#fireworks {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.reveal-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+}
+
+.reveal-subtitle {
+    color: #f3c58c;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.reveal-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 7vw, 75px);
+    color: #ffe1a8;
+    text-shadow: 0 0 25px #ffb45c;
+}
+
+.reveal-heart {
+    font-size: 35px;
+    margin-top: 25px;
+}
+
+/* SCREEN 3 */
+.wish-screen {
+    background:
+        radial-gradient(circle at center, #321326, #100914 55%, #030205);
+}
+
+.wish-content {
+    max-width: 700px;
+    padding: 30px;
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+.wish-label {
+    color: #e8b7c9;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.wish-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 8vw, 85px);
+    color: #ffcfdf;
+    text-shadow: 0 0 30px #f05a9b;
+}
+
+.wish-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 32px);
+    margin-top: 20px;
+    color: #f5d7e4;
+}
+
+.wish-message {
+    font-size: 14px;
+    line-height: 2;
+    color: #d5c1ce;
+    margin-top: 35px;
+}
+
+.wish-decoration {
+    font-size: 28px;
+    margin-top: 35px;
+}
+
+/* ANIMATIONS */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: rotate(-45deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(-45deg) scale(1.12);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+
+    .heart-button {
+        width: 130px;
+        height: 130px;
+    }
+
+    .heart-button::before,
+    .heart-button::after {
+        width: 130px;
+        height: 130px;
+    }
+
+    .heart-button::before {
+        top: -65px;
+    }
+
+    .heart-button::after {
+        left: 65px;
+    }
+
+    .heart-button span {
+        font-size: 13px;
+    }
+
+    .top-text {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .bottom-text {
+        font-size: 10px;
+    }
+}
